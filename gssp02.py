@@ -27,7 +27,7 @@ for docType in docTypes:
 		tree = ET.parse('C:\\Users\\Stephen\\Desktop\\changed-' + docType + '\\' + file)
 		root = tree.getroot()
 		fileNameXMLToStr = ET.tostring(root, encoding='utf8', method='xml')
-		headersForPostRequest = {'Content-type':'application/xml', 'Authorization' : 'Bearer uLRPWrjMDNWzSOeo4jMGbL3H2zcA8fyhkiElDBWefHiN5FaCCoqfF8OeoENci3nC1Y8TdNjiCIcXWKehwYhWbPH2eeDwKlmOJFXHb35G6CNMLyhSIMDWk3U5YTKv0ZXBUxCtnQ3FKjT5QtLJ0XzGeQLzzAMl3hATjDuzcbbIJCrIPc1bSjeCTxWpw3KHEWByEklEqTC0Zl8EgzHqWFUNA6LNeYRx2KMW1FszeEKuCmAnk1B2yzYmf6haKBMEGv5s'}
+		headersForPostRequest = {'Content-type':'application/xml', 'Authorization' : 'Bearer [token scrubbed]'}
 
-		urlForPostRequest = 'https://uat-store-api.priipcloud.com/product-store/api/product/' + files2[idx] + '/org/17'
+		urlForPostRequest = '[endpoint scrubbed]' + files2[idx] + '[params scrubbed]'
 		respPost = requests.post(url = urlForPostRequest, headers = headersForPostRequest, data = fileNameXMLToStr, verify=False)

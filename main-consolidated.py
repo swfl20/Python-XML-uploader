@@ -5,6 +5,7 @@ import array
 
 endpoint = 'https://uat-store-api.priipcloud.com/product-store/api/product/'
 token = '[token scrubbed]'
+params = '/org/17'
 
 #---
 # Function which handles all the logic in relation to how the client sends us information
@@ -53,10 +54,10 @@ def operation(toUpload):
             fileNameXMLToStr = ET.tostring(root, encoding='utf8', method='xml')
             headersForPostRequest = {'Content-type':'application/xml', 'Authorization' : 'Bearer ' + token}
 
-            urlForPostRequest = endpoint + files2[idx] + '/org/17'
+            urlForPostRequest = endpoint + files2[idx] + params
             respPost = requests.post(url = urlForPostRequest, headers = headersForPostRequest, data = fileNameXMLToStr, verify=False)
 
 #---
-#
+# only use this line to run the script, and state what your intended operation is
 #
 operation('Both') #Use any of the 3 following strings 'US', 'GSSP', 'Both' depending on the folders sent yby client
