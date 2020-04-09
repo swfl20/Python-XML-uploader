@@ -15,12 +15,10 @@ params = '[params scrubbed]'
 def operation(toUpload, operation):
                          
                            
-    if toUpload == 'US':
-        region = ['US']
-    elif toUpload == 'GSSP':
-        region = ['gssp']
-    else:
+    if toUpload == 'Both':
         region = ['US','gssp']
+    else:
+        region = [toUpload]
     
     for reg in region:
             
